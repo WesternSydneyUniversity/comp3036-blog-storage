@@ -22,9 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     if: github.actor != 'github-classroom[bot]'
     steps:
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install PNPM 📦
@@ -50,11 +47,11 @@ jobs:
         uses: WesternSydneyUniversity/autograding-command-grader@v3
         continue-on-error: true
         with:
-          working-directory: tests/playwright
+          working-directory: .
           test-name: Exercise
           courseId: ${{env.COURSE}}
           sectionId: exercise-cookies-and-storage-in-authentication-and-authorisation
-          command: pnpm test"
+          command: pnpm test
           timeout: 10
           max-score: 1
 
