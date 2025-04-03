@@ -6,8 +6,5 @@ export async function GET(): Promise<NextResponse> {
 
   // TODO: Check if 'session_id' cookie exists and equals 'abc789xyz'
   // Return 200 with "Admin access granted" if valid, 401 with "Unauthorized" if not
-  return NextResponse.json(
-    { message: "Check not implemented" },
-    { status: 501 }
-  );
+  return NextResponse.json({ message: "Not implemented" }, { status: 501 });
 }
